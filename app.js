@@ -19,11 +19,11 @@ let tables = [
 ];
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "reservation.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/index.html", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.get("/reservation.html", function(req, res) {
+  res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
 app.get("/api/tables", function(req, res) {
