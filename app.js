@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/reservation.html", function(req, res) {
+app.get("/reservations", function(req, res) {
   res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
@@ -37,7 +37,6 @@ app.get("/tables", function(req, res) {
 app.post("/api/tables", function(req, res) {
 
   let newTable = req.body;
-
 
   console.log("this works")
 
