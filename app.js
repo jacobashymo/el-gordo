@@ -44,8 +44,6 @@ app.post("/api/tables", function(req, res) {
 
   let newTable = req.body;
 
-  console.log("this works")
-
   console.log(newTable);
 
   tables.push(newTable);
@@ -56,8 +54,6 @@ app.post("/api/tables", function(req, res) {
 app.post("/api/waitlist", function(req, res) {
 
   let newTable = req.body;
-
-  console.log("this works");
 
   console.log(newTable);
 
