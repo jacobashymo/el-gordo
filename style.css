@@ -1,0 +1,40 @@
+body {
+  background: black;
+  height: 120%;
+}
+
+.ParallaxContainer {
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: -1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-1px) scale(2);
+  background: url("background.jpg") no-repeat center center;
+  background-size: 100%;
+}
+
+.name {
+    color:white; 
+    font-size: 100px;
+    padding-top: 50px;
+}
+
+.makeReservation {
+    color: white;
+    background: black;
+}
+
+.buttons {
+    margin-bot: 20px;
+}
+
+.MainContainer {
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
