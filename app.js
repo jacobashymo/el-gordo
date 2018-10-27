@@ -22,19 +22,21 @@ app.get("/api/tables", function(req, res) {
   return res.json(tables);
 });
 
-app.post("/api/tables", function(req, res) {
 
-  let newTable = req.body;
+  app.post("/api/tables", function(req, res) {
 
+    let newTable = req.body;
+  
+  
+    console.log("this works");
+  
+    console.log(newTable);
+  
+    tables.push(newTable);
+  
+    res.json(newTable);
+  });
 
-  console.log("this works")
-
-  console.log(newTable);
-
-  tables.push(newTable);
-
-  res.json(newTable);
-});
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
