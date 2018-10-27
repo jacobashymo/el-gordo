@@ -18,8 +18,14 @@ let tables = [
   }
 ];
 
+let waitlist = [];
+
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist);
 });
 
 app.get("/reservations", function(req, res) {
@@ -43,6 +49,19 @@ app.post("/api/tables", function(req, res) {
   console.log(newTable);
 
   tables.push(newTable);
+
+  res.json(newTable);
+});
+
+app.post("/api/waitlist", function(req, res) {
+
+  let newTable = req.body;
+
+  console.log("this works");
+
+  console.log(newTable);
+
+  waitlist.push(newTable);
 
   res.json(newTable);
 });

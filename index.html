@@ -73,13 +73,22 @@
                     email: $("#reserve_email").val().trim(),
                     id: $("#reserve_uniqueID").val().trim()
                 }
+                $.get("/api/tables", obj).then(function (data) {
+                    if (data.length < 5) {
+                        $.post("/api/tables", obj)
+                            .then(function (data) {
+                                console.log("index.html", data);
+                                alert("Adding table...");
+                            });
+                    } else {
+                        $.post("/api/waitlist", obj)
+                            .then(function (data) {
+                                console.log("index.html", data);
+                                alert("Adding table...");
+                            });
+                    };
+                })
 
-                $.post("/api/tables", obj)
-                    .then(function (data) {
-                        console.log("index.html", data);
-                        alert("Adding table...");
-                    });
-                // console.log(obj)
             })
         })
     </script>
